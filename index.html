@@ -6,55 +6,43 @@
     <title>Jiahao Liu's Homepage</title>
     <style>
         :root {
-            --primary-color: #004d99;
-            --text-color: #333333;
-            --gray-color: #666666;
-            --desc-gray: #555555;
-            --bg-color: #ffffff;
-            --ccf-a-color: #dc3545;
-            --ccf-b-color: #f0ad4e;
+            --primary: #004d99;
+            --text: #333;
+            --muted: #666;
+            --border: #e8e8e8;
         }
 
         * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
         }
 
         body {
+            margin: 0;
+            color: var(--text);
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: #f5f7fa;
-            padding: 2rem 1rem;
+            line-height: 1.65;
         }
 
         .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background-color: var(--bg-color);
-            padding: 3rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            padding: 3rem 6vw 4rem;
         }
 
-        /* --- Header Section --- */
         .header {
             display: flex;
             align-items: center;
             gap: 2.5rem;
-            border-bottom: 1px solid #eeeeee;
             padding-bottom: 2rem;
-            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
         }
 
         .photo {
-            flex-shrink: 0;
             width: 160px;
             height: 160px;
-            border-radius: 50%;
+            flex: 0 0 160px;
             overflow: hidden;
-            border: 3px solid #eeeeee;
+            border: 3px solid var(--border);
+            border-radius: 50%;
         }
 
         .photo img {
@@ -63,352 +51,117 @@
             object-fit: cover;
         }
 
-        .info h1 {
+        h1 {
+            margin: 0 0 0.5rem;
+            color: var(--primary);
             font-size: 2.2rem;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
         }
 
-        .info p {
-            color: var(--gray-color);
-            margin-bottom: 0.3rem;
+        h2 {
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary);
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin: 0 0 1rem;
+        }
+
+        .meta {
+            color: var(--muted);
         }
 
         .links {
-            margin-top: 1rem;
             display: flex;
-            gap: 1.5rem;
             flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        a {
+            color: var(--primary);
         }
 
         .links a {
-            color: var(--primary-color);
-            text-decoration: none;
             font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
+            text-decoration: none;
         }
 
         .links a:hover {
             text-decoration: underline;
         }
 
-        /* --- Main Content Section --- */
-        h2 {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 0.5rem;
-            margin: 2.5rem 0 1rem 0;
-        }
-
-        p {
-            margin-bottom: 1rem;
-        }
-
-        /* --- Experience / Education --- */
-        .timeline-item {
-            margin-bottom: 1.5rem;
-        }
-        .timeline-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            font-weight: 600;
-            margin-bottom: 0.3rem;
-        }
-        .timeline-date {
-            color: var(--gray-color);
-            font-weight: 400;
-            font-size: 0.95rem;
-        }
-        .timeline-body ul {
-            padding-left: 1.2rem;
-            color: var(--desc-gray);
-            font-size: 0.95rem;
-        }
-        .timeline-body li {
-            margin-bottom: 0.3rem;
-        }
-
-        /* --- Publications --- */
-        .pub-list {
-            list-style: none;
-        }
-        .pub-list li {
-            margin-bottom: 1.5rem;
-            line-height: 1.5;
-        }
-        .pub-title {
+        .announcement {
+            color: #c00;
             font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
         }
-        .pub-title:hover {
-            text-decoration: underline;
-        }
-        .pub-authors {
-            color: var(--text-color);
-            font-size: 0.95rem;
-            margin: 0.2rem 0;
-        }
-        .pub-venue {
-            font-style: italic;
-            color: var(--gray-color);
-            font-size: 0.95rem;
-        }
-        .highlight {
-            font-size: 0.9rem;
-            color: var(--desc-gray);
-            margin-top: 0.4rem;
-            padding-left: 0.8rem;
-            border-left: 3px solid #e0e0e0;
-            background-color: #fafafa;
-            padding: 0.4rem 0.8rem;
-            border-radius: 0 4px 4px 0;
-        }
-        .badge {
-            display: inline-block;
-            padding: 0.1rem 0.5rem;
-            border-radius: 12px;
-            color: white;
-            font-size: 0.75rem;
-            font-weight: 700;
-            margin-left: 0.5rem;
-            vertical-align: middle;
-            font-style: normal;
-        }
-        .badge.ccf-a { background-color: var(--ccf-a-color); }
-        .badge.ccf-b { background-color: var(--ccf-b-color); }
-        .sub-heading { margin-top: 1.5rem; margin-bottom: 1rem; color: var(--gray-color); font-size: 1.1rem; }
 
-        /* --- Awards --- */
-        .awards-list {
-            padding-left: 1.2rem;
+        .awards {
+            margin: 0;
+            padding-left: 1.25rem;
         }
-        .awards-list li {
+
+        .awards li {
             margin-bottom: 0.5rem;
-            font-size: 0.95rem;
         }
 
-        /* --- Responsive --- */
-        @media (max-width: 600px) {
+        @media (max-width: 640px) {
+            .container {
+                padding: 1.5rem;
+            }
+
             .header {
                 flex-direction: column;
                 text-align: center;
             }
+
             .links {
                 justify-content: center;
-            }
-            .timeline-header {
-                flex-direction: column;
-            }
-            .timeline-date {
-                margin-top: 0.2rem;
-            }
-            .container {
-                padding: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <div class="header">
-        <div class="photo">
-            <img src="photo.png" alt="Jiahao Liu">
-        </div>
-        <div class="info">
-            <h1>Jiahao Liu (刘家豪)</h1>
-            <p>PhD Candidate, School of Computer Science, Fudan University</p>
-            <p>Email: <a href="mailto:jiahaoliu23@m.fudan.edu.cn" style="color:var(--gray-color); font-weight:normal;">jiahaoliu23@m.fudan.edu.cn</a></p>
-            <div class="links">
-                <a href="https://github.com/jhliu0807" target="_blank">GitHub</a>
-                <a href="https://scholar.google.com/citations?user=w92uFHMAAAAJ" target="_blank">Google Scholar</a>
-                <a href="./CV.pdf" target="_blank">CV (PDF)</a>
+    <div class="container">
+        <header class="header">
+            <div class="photo">
+                <img src="photo.png" alt="Jiahao Liu">
             </div>
-        </div>
+            <div>
+                <h1>Jiahao Liu (刘家豪)</h1>
+                <p class="meta">PhD Candidate, School of Computer Science, Fudan University</p>
+                <p class="meta">Email: <a href="mailto:jiahaoliu23@m.fudan.edu.cn">jiahaoliu23@m.fudan.edu.cn</a></p>
+                <div class="links">
+                    <a href="https://scholar.google.com/citations?user=w92uFHMAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+                    <a href="./CV.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <h2>About Me</h2>
+                <p>I am a PhD candidate in Computer Science at Fudan University, where I study personalized AI and recommender systems. My research explores LLM-based agents, interactive technologies, causal inference, and graph learning for efficient and trustworthy information distribution.</p>
+                <p>I have spent more than two years conducting algorithm research at ByteDance, Alibaba, and Tencent through talent programs. Several projects have been fully deployed in products with over 100 million daily active users.</p>
+                <p class="announcement">I will join Zhongguancun Academy as an Assistant Professor in December 2026. Prospective Ph.D. students are warmly encouraged to contact me, and I also welcome opportunities for research collaboration. (我将于2026年12月加入中关村学院，担任助理教授。诚挚欢迎有意攻读博士学位的同学与我联系，也期待与各位同行开展合作。)</p>
+            </section>
+
+            <section>
+                <h2>Publications</h2>
+                <p>I no longer maintain a publication list on this page. Please visit my <a href="https://scholar.google.com/citations?user=w92uFHMAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar profile</a> for my recent work.</p>
+            </section>
+
+            <section>
+                <h2>Honors &amp; Awards</h2>
+                <ul class="awards">
+                    <li>Doctoral National Scholarship (博士生国家奖学金), 2025</li>
+                    <li>Doctoral National Scholarship (博士生国家奖学金), 2023</li>
+                    <li>Undergraduate National Scholarship (本科生国家奖学金), 2020</li>
+                </ul>
+            </section>
+        </main>
     </div>
-
-    <div class="content">
-        <h2>About Me</h2>
-        <p>Jiahao Liu is a PhD candidate (2021.9-2026.12 expected) in Computer Science at Fudan University. He holds a Bachelor's degree from Southwest Jiaotong University. His research focuses on personalized AI and recommender systems, integrating LLM-driven agents, interactive technologies, causal inference, and graph learning to explore efficient and trustworthy information distribution paradigms.</p>
-   
-        <p style="color: red; font-weight: bold;">I will join Zhongguancun Academy as an Assistant Professor in December 2026. Prospective Ph.D. students are warmly encouraged to contact me, and I also welcome opportunities for research collaboration. (我将于2026年12月加入中关村学院，担任助理教授。诚挚欢迎有意攻读博士学位的同学与我联系，也期待与各位同行开展合作。)</p>
-        
-        <h2>Work Experience</h2>
-        <!-- <div class="timeline-item">
-            <div class="timeline-header">
-                <span>ByteDance (Douyin) - RecSys Algorithm Engineer Intern</span>
-                <span class="timeline-date">2026.04 – 2026.08 (Expected)</span>
-            </div>
-            <div class="timeline-body">
-                <ul>
-                    <li>Optimizing and iterating recommendation algorithms for the Douyin short-video homepage.</li>
-                </ul>
-            </div>
-        </div> -->
-
-        <div class="timeline-item">
-            <div class="timeline-header">
-                <span>Tencent (WeChat Video) - RecSys Algorithm Engineer Intern</span>
-                <span class="timeline-date">2025.09 – 2026.02</span>
-            </div>
-            <div class="timeline-body">
-                <ul>
-                    <li>Constructed multimodal video embeddings based on CLIP and MLLM, integrating Multi-view VQ-VAE for feature discretization to alleviate livestreaming behavior data sparsity.</li>
-                    <li>Proposed an end-to-end distribution-aware embedding method for streaming numerical features in CTR prediction.</li>
-                    <li>Designed a parameter-free lightweight feature cross module leveraging Token Mixing and Pyramid structures to enhance feature interaction capability.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-header">
-                <span>ByteDance (Gaming) - Backend R&D Engineer Intern</span>
-                <span class="timeline-date">2021.03 – 2021.08</span>
-            </div>
-            <div class="timeline-body">
-                <ul>
-                    <li>Developed internal document management systems, search engines, and gaming activity engines using Golang.</li>
-                </ul>
-            </div>
-        </div>
-
-        <h2>Publications</h2>
-        <p style="color: var(--gray-color); font-size: 0.9rem;"><i>(* indicates equal contributions.)</i></p>
-        
-        <h3 class="sub-heading">Main Author</h3>
-        <ul class="pub-list">
-            <li>
-                <a href="https://arxiv.org/pdf/2602.03223" class="pub-title" target="_blank">Distribution-Aware End-to-End Embedding for Streaming Numerical Features in Click-Through Rate Prediction</a>
-                <div class="pub-authors"><b>Jiahao Liu</b>, Hongji Ruan, Weimin Zhang et al.</div>
-                <div class="pub-venue">KDD 2026 <span class="badge ccf-a">CCF A</span></div>
-                <div class="highlight"><strong>Highlight:</strong> Developed an end-to-end distribution-aware embedding framework for streaming numerical features, yielding a +2.307% increase in advertiser value during online A/B testing.</div>
-            </li>
-            <li>
-                <a href="XXX" class="pub-title" target="_blank">UniGCRec: Unified User-Item Quantization for Generative Cross-Domain Recommendation</a>
-                <div class="pub-authors">Chaoyue Ding, <b>Jiahao Liu</b>, Dongsheng Li et al.</div>
-                <div class="pub-venue">KDD 2026 <span class="badge ccf-a">CCF A</span></div>
-                <div class="highlight"><strong>Highlight:</strong> Jointly quantizes users and items into a shared semantic-collaborative ID space to enable preference-aware transfer in low-overlap cross-domain recommendation.</div>
-            </li>
-            <li>
-                <a href="https://arxiv.org/pdf/2603.29705" class="pub-title" target="_blank">Drift-Aware Incremental Token Adaptation with Collaborative Semantics for Generative Recommendation</a>
-                <div class="pub-authors">Yuebo Feng, <b>Jiahao Liu</b>, Mingzhe Han et al.</div>
-                <div class="pub-venue">SIGIR 2026 <span class="badge ccf-a">CCF A</span></div>
-                <div class="highlight"><strong>Highlight:</strong> Proposed a differentiated update and hierarchical code reassignment method to mitigate collaborative representation drift in generative recommender systems, balancing adaptation to new interactions with the stability of token alignment.</div>
-            </li>
-            <li>
-                <a href="https://arxiv.org/pdf/2602.12593" class="pub-title" target="_blank">RQ-GMM: Residual Quantized Gaussian Mixture Model for Multimodal Semantic Discretization in CTR Prediction</a>
-                <div class="pub-authors">Ziye Tong*, <b>Jiahao Liu*</b>, Weimin Zhang et al.</div>
-                <div class="pub-venue">SIGIR 2026 <span class="badge ccf-a">CCF A</span></div>
-                <div class="highlight"><strong>Highlight:</strong> Proposed a residual quantized GMM for multimodal semantic discretization, achieving a significant +1.502% advertiser value improvement in online A/B testing on a short-video platform with hundreds of millions of DAU.</div>
-            </li>
-            <li>
-                <a href="./paper/AgentSA.pdf" class="pub-title" target="_blank">LLM Agent-based Shilling Attack on Recommender Systems</a>
-                <div class="pub-authors">Shengkang Gu*, <b>Jiahao Liu*</b>, Dongsheng Li et al.</div>
-                <div class="pub-venue">WSDM 2026 <span class="badge ccf-b">CCF B</span></div>
-                <div class="highlight"><strong>Highlight:</strong> Manipulated recommendation results without accessing internal system data by utilizing LLMs to build fake user agents that generate realistic ratings and reviews.</div>
-            </li>
-            <li>
-                <a href="./paper/EvalAgent.pdf" class="pub-title" target="_blank">EvalAgent: Towards Evaluating News Recommender Systems with LLM-based Agents</a>
-                <div class="pub-authors">Guangping Zhang, Peng Zhang, <b>Jiahao Liu</b> et al.</div>
-                <div class="pub-venue">CIKM 2025 <span class="badge ccf-b">CCF B</span></div>
-                <div class="highlight"><strong>Highlight:</strong> Introduced a stable memory mechanism to solve noise accumulation in user simulation, providing an accurate, scalable, and low-risk evaluation tool for recommender systems.</div>
-            </li>
-            <li>
-                <a href="./paper/FS.pdf" class="pub-title" target="_blank">Unbiased Collaborative Filtering with Fair Sampling</a>
-                <div class="pub-authors"><b>Jiahao Liu</b>, Dongsheng Li, Hansu Gu et al.</div>
-                <div class="pub-venue">SIGIR 2025 <span class="badge ccf-a">CCF A</span></div>
-                <div class="highlight"><strong>Highlight:</strong> Theoretically proved and proposed a simple yet effective sampling strategy to eliminate popularity bias by balancing positive and negative sample probabilities without complex propensity score estimation.</div>
-            </li>
-            <li>
-                <a href="./paper/CoT-Rec.pdf" class="pub-title" target="_blank">Improving LLM-powered Recommendations with Personalized Information</a>
-                <div class="pub-authors"><b>Jiahao Liu*</b>, Xueshuo Yan*, Dongsheng Li et al.</div>
-                <div class="pub-venue">SIGIR 2025 <span class="badge ccf-a">CCF A</span></div>
-                <div class="highlight"><strong>Highlight:</strong> Explicitly extracted user preferences via Chain-of-Thought (CoT), enhancing traditional models with LLM-generated info at the retrieval stage to achieve full-chain performance improvement.</div>
-            </li>
-            <li>
-                <a href="./paper/AgentCF++.pdf" class="pub-title" target="_blank">AgentCF++: Memory-enhanced LLM-based Agents for Popularity-aware Cross-domain Recommendations</a>
-                <div class="pub-authors"><b>Jiahao Liu*</b>, Shengkang Gu*, Dongsheng Li et al.</div>
-                <div class="pub-venue">SIGIR 2025 <span class="badge ccf-a">CCF A</span></div>
-                <div class="highlight"><strong>Highlight:</strong> Solved cross-domain interference via dual-layer memory and allowed agents to simulate popularity-driven dynamics by grouping interests and sharing memory among "like-minded" users.</div>
-            </li>
-            <li>
-                <a href="./paper/DiscomfortFilter.pdf" class="pub-title" target="_blank">Filtering Discomforting Recommendations with Large Language Models</a>
-                <div class="pub-authors"><b>Jiahao Liu</b>, Yiyang Shao, Peng Zhang et al.</div>
-                <div class="pub-venue">WWW 2025 <span class="badge ccf-a">CCF A</span></div>
-                <div class="highlight"><strong>Highlight:</strong> Provided a complete technical solution to the algorithmic "black box" discomfort issue, using LLMs to grant users initiative in information consumption without disrupting the existing ecosystem.</div>
-            </li>
-            <li>
-                <a href="https://arxiv.org/pdf/2505.18120" class="pub-title" target="_blank">Bidirectional Knowledge Distillation for Enhancing Sequential Recommendation with Large Language Models</a>
-                <div class="pub-authors">Jiongran Wu*, <b>Jiahao Liu*</b>, Dongsheng Li et al.</div>
-                <div class="pub-venue">arXiv:2505</div>
-                <div class="highlight"><strong>Highlight:</strong> Proposed a bidirectional mutual distillation framework to resolve the conflict between the weak semantic understanding of small models and the high inference costs of LLMs.</div>
-            </li>
-            <li>
-                <a href="https://arxiv.org/pdf/2307.15960" class="pub-title" target="_blank">Recommendation Unlearning via Matrix Correction</a>
-                <div class="pub-authors"><b>Jiahao Liu</b>, Dongsheng Li, Hansu Gu et al.</div>
-                <div class="pub-venue">arXiv:2307</div>
-                <div class="highlight"><strong>Highlight:</strong> Achieved efficient unlearning by decoupling users' sensitive personal interaction data from item similarities (model parameters).</div>
-            </li>
-            <li>
-                <a href="./paper/AutoSeqRec.pdf" class="pub-title" target="_blank">AutoSeqRec: Autoencoder for Efficient Sequential Recommendation</a>
-                <div class="pub-authors">Sijia Liu*, <b>Jiahao Liu*</b>, Hansu Gu et al.</div>
-                <div class="pub-venue">CIKM 2023 <span class="badge ccf-b">CCF B</span></div>
-                <div class="highlight"><strong>Highlight:</strong> Introduced item transition information to propose the first autoencoder-based sequential recommendation model.</div>
-            </li>
-            <li>
-                <a href="./paper/TriSIM4Rec.pdf" class="pub-title" target="_blank">Triple Structural Information Modelling for Accurate, Explainable and Interactive Recommendation</a>
-                <div class="pub-authors"><b>Jiahao Liu</b>, Dongsheng Li, Hansu Gu et al.</div>
-                <div class="pub-venue">SIGIR 2023 <span class="badge ccf-a">CCF A</span></div>
-                <div class="highlight"><strong>Highlight:</strong> Proposed an incremental SVD technique for the efficient global optimization of embedding representations.</div>
-            </li>
-            <li>
-                <a href="./paper/FreeGEM.pdf" class="pub-title" target="_blank">Parameter-free Dynamic Graph Embedding for Link Prediction</a>
-                <div class="pub-authors"><b>Jiahao Liu</b>, Dongsheng Li, Hansu Gu et al.</div>
-                <div class="pub-venue">NeurIPS 2022 <span class="badge ccf-a">CCF A</span></div>
-                <div class="highlight"><strong>Highlight:</strong> Proposed a Graph-Transformer based architecture for sequential recommendation and introduced the concept of "Generalized Collaborative Filtering".</div>
-            </li>
-            <li>
-                <a href="./paper/PGSP.pdf" class="pub-title" target="_blank">Personalized Graph Signal Processing for Collaborative Filtering</a>
-                <div class="pub-authors"><b>Jiahao Liu</b>, Dongsheng Li, Hansu Gu et al.</div>
-                <div class="pub-venue">WWW 2023 <span class="badge ccf-a">CCF A</span></div>
-                <div class="highlight"><strong>Highlight:</strong> Interpreted recall methods from a frequency domain perspective and proposed concepts of "personalized graph signals", "augmented similarity graphs", and "mixed frequency filters".</div>
-            </li>
-        </ul>
-
-        <h3 class="sub-heading">Co-Author</h3>
-        <ul class="pub-list">
-            <li>
-                <a href="https://arxiv.org/pdf/2601.18570" class="pub-title" target="_blank">Feature-Indexed Federated Recommendation with Residual-Quantized Codebooks</a>
-                <div class="pub-authors">Mingzhe Han, <b>Jiahao Liu</b>, Dongsheng Li, Hansu Gu et al.</div>
-                <div class="pub-venue">arXiv:2601</div>
-            </li>
-            <li>
-                <a href="./paper/FedCIA.pdf" class="pub-title" target="_blank">FedCIA: Federated Collaborative Information Aggregation for Privacy-Preserving Recommendation</a>
-                <div class="pub-authors">Mingzhe Han, Dongsheng Li, Jiafeng Xia, <b>Jiahao Liu</b> et al.</div>
-                <div class="pub-venue">SIGIR 2025 <span class="badge ccf-a">CCF A</span></div>
-            </li>
-            <li>
-                <a href="./paper/FIRE.pdf" class="pub-title" target="_blank">FIRE: Fast Incremental Recommendation with Graph Signal Processing</a>
-                <div class="pub-authors">Jiafeng Xia, Dongsheng Li, Hansu Gu, <b>Jiahao Liu</b> et al.</div>
-                <div class="pub-venue">WWW 2022 <span class="badge ccf-a">CCF A</span></div>
-            </li>
-        </ul>
-
-        <h2>Honors & Awards</h2>
-        <ul class="awards-list">
-            <li>Doctoral National Scholarship (博士生国家奖学金), 2025</li>
-            <li>Doctoral National Scholarship (博士生国家奖学金), 2023</li>
-            <li>Undergraduate National Scholarship (本科生国家奖学金), 2020</li>
-            <li>Si-Shi-Yang-Hua Gold Medal, Southwest Jiaotong University (竢实扬华奖章，全校学生最高荣誉), 2021</li>
-            <li>Outstanding Graduate, Southwest Jiaotong University (优秀毕业生), 2021</li>
-        </ul>
-    </div>
-</div>
-
 </body>
 </html>
