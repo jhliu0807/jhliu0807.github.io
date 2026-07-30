@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,116 +13,119 @@
             --border: #e8e8e8;
         }
 
-        * {
-            box-sizing: border-box;
-        }
+```
+    * {
+        box-sizing: border-box;
+    }
 
-        body {
-            margin: 0;
-            color: var(--text);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.65;
-        }
+    body {
+        margin: 0;
+        color: var(--text);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.65;
+    }
 
+    .container {
+        width: 100%;
+        padding: 3rem 6vw 4rem;
+    }
+
+    .header {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .photo {
+        width: 160px;
+        height: 160px;
+        flex: 0 0 160px;
+        overflow: hidden;
+        border: 3px solid var(--border);
+        border-radius: 50%;
+    }
+
+    .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    h1 {
+        margin: 0 0 0.5rem;
+        color: var(--primary);
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        margin: 2.5rem 0 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--primary);
+        color: var(--primary);
+        font-size: 1.5rem;
+    }
+
+    p {
+        margin: 0 0 1rem;
+    }
+
+    .meta {
+        color: var(--muted);
+    }
+
+    .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    a {
+        color: var(--primary);
+    }
+
+    .links a {
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .links a:hover {
+        text-decoration: underline;
+    }
+
+    .announcement {
+        color: #c00;
+        font-weight: 700;
+    }
+
+    .awards {
+        margin: 0;
+        padding-left: 1.25rem;
+    }
+
+    .awards li {
+        margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 640px) {
         .container {
-            width: 100%;
-            padding: 3rem 6vw 4rem;
+            padding: 1.5rem;
         }
 
         .header {
-            display: flex;
-            align-items: center;
-            gap: 2.5rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .photo {
-            width: 160px;
-            height: 160px;
-            flex: 0 0 160px;
-            overflow: hidden;
-            border: 3px solid var(--border);
-            border-radius: 50%;
-        }
-
-        .photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        h1 {
-            margin: 0 0 0.5rem;
-            color: var(--primary);
-            font-size: 2.2rem;
-        }
-
-        h2 {
-            margin: 2.5rem 0 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--primary);
-            color: var(--primary);
-            font-size: 1.5rem;
-        }
-
-        p {
-            margin: 0 0 1rem;
-        }
-
-        .meta {
-            color: var(--muted);
+            flex-direction: column;
+            text-align: center;
         }
 
         .links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-top: 1rem;
+            justify-content: center;
         }
+    }
+</style>
+```
 
-        a {
-            color: var(--primary);
-        }
-
-        .links a {
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        .links a:hover {
-            text-decoration: underline;
-        }
-
-        .announcement {
-            color: #c00;
-            font-weight: 700;
-        }
-
-        .awards {
-            margin: 0;
-            padding-left: 1.25rem;
-        }
-
-        .awards li {
-            margin-bottom: 0.5rem;
-        }
-
-        @media (max-width: 640px) {
-            .container {
-                padding: 1.5rem;
-            }
-
-            .header {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .links {
-                justify-content: center;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -131,7 +135,7 @@
             </div>
             <div>
                 <h1>Jiahao Liu (刘家豪)</h1>
-                <p class="meta">PhD Candidate, School of Computer Science, Fudan University</p>
+                <p class="meta">Incoming Assistant Professor at Zhongguancun Academy</p>
                 <p class="meta">Email: <a href="mailto:jiahaoliu23@m.fudan.edu.cn">jiahaoliu23@m.fudan.edu.cn</a></p>
                 <div class="links">
                     <a href="https://scholar.google.com/citations?user=w92uFHMAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>
@@ -140,28 +144,31 @@
             </div>
         </header>
 
-        <main>
-            <section>
-                <h2>About Me</h2>
-                <p>I am a PhD candidate in Computer Science at Fudan University, where I study personalized AI and recommender systems. My research explores LLM-based agents, interactive technologies, causal inference, and graph learning for efficient and trustworthy information distribution.</p>
-                <p>I have spent more than two years conducting algorithm research at ByteDance, Alibaba, and Tencent through talent programs. Several projects have been fully deployed in products with over 100 million daily active users.</p>
-                <p class="announcement">I will join Zhongguancun Academy as an Assistant Professor in December 2026. Prospective Ph.D. students are warmly encouraged to contact me, and I also welcome opportunities for research collaboration. (我将于2026年12月加入中关村学院，担任助理教授。诚挚欢迎有意攻读博士学位的同学与我联系，也期待与各位同行开展合作。)</p>
-            </section>
+```
+    <main>
+        <section>
+            <h2>About Me</h2>
+            <p>I am a PhD candidate in Computer Science at Fudan University, where I study personalized AI and recommender systems. My research explores LLM-based agents, interactive technologies, causal inference, and graph learning for efficient and trustworthy information distribution.</p>
+            <p>I have spent more than two years conducting algorithm research at ByteDance, Alibaba, and Tencent through talent programs. Several projects have been fully deployed in products with over 100 million daily active users.</p>
+            <p class="announcement">I will join Zhongguancun Academy as an Assistant Professor in December 2026. Prospective Ph.D. students are warmly encouraged to contact me, and I also welcome opportunities for research collaboration. (我将于2026年12月加入中关村学院，担任助理教授。诚挚欢迎有意攻读博士学位的同学与我联系，也期待与各位同行开展合作。)</p>
+        </section>
 
-            <section>
-                <h2>Publications</h2>
-                <p>I no longer maintain a publication list on this page. Please visit my <a href="https://scholar.google.com/citations?user=w92uFHMAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar profile</a> for my recent work.</p>
-            </section>
+        <section>
+            <h2>Publications</h2>
+            <p>I no longer maintain a publication list on this page. Please visit my <a href="https://scholar.google.com/citations?user=w92uFHMAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar profile</a> for my recent work.</p>
+        </section>
 
-            <section>
-                <h2>Honors &amp; Awards</h2>
-                <ul class="awards">
-                    <li>Doctoral National Scholarship (博士生国家奖学金), 2025</li>
-                    <li>Doctoral National Scholarship (博士生国家奖学金), 2023</li>
-                    <li>Undergraduate National Scholarship (本科生国家奖学金), 2020</li>
-                </ul>
-            </section>
-        </main>
-    </div>
+        <section>
+            <h2>Honors &amp; Awards</h2>
+            <ul class="awards">
+                <li>Doctoral National Scholarship (博士生国家奖学金), 2025</li>
+                <li>Doctoral National Scholarship (博士生国家奖学金), 2023</li>
+                <li>Undergraduate National Scholarship (本科生国家奖学金), 2020</li>
+            </ul>
+        </section>
+    </main>
+</div>
+```
+
 </body>
 </html>
